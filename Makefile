@@ -1,6 +1,6 @@
 .PHONY: run, build
 run:
-	go run cmd/main.go
+	go run cmd/bot/main.go
 
 build:
-	go build -o bin/ cmd/main.go
+	go build -o bin/ cmd/bot/main.go
