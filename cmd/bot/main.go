@@ -1,8 +1,8 @@
 package main
 
 import (
-	"io/ioutil"
 	"log"
+	"os"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
@@ -34,7 +34,7 @@ func main() {
 }
 
 func GetToken() string {
-	file, err := ioutil.ReadFile("token.txt")
+	file, err := os.ReadFile("token.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
