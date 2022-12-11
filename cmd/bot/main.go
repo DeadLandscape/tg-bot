@@ -8,8 +8,6 @@ import (
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
-//const token = "5732583169:AAGcjnJv15W9zlWEmA4AuJg0_SmwwC5Fhxk"
-
 func main() {
 	bot, err := tgbotapi.NewBotAPI(GetToken())
 	if err != nil {
@@ -49,6 +47,6 @@ func GetToken() string {
 	for scanner.Scan() {
 		token = scanner.Text()
 	}
-	
+
 	return token
 }
