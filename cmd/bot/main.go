@@ -1,9 +1,8 @@
 package main
 
 import (
-	"bufio"
+	"io/ioutil"
 	"log"
-	"os"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
@@ -35,18 +34,11 @@ func main() {
 }
 
 func GetToken() string {
-	file, err := os.Open("token.txt")
+	file, err := ioutil.ReadFile("token.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
-	scanner.Split(bufio.ScanLines)
-	var token string
-	for scanner.Scan() {
-		token = scanner.Text()
-	}
+	token := string(file)
 
 	return token
 }
